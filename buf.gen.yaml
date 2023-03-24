@@ -1,0 +1,21 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/bufbuild/buf-tour/gen
+    except:
+      - buf.build/googleapis/googleapis
+plugins:
+  - plugin: go
+    out: gen
+    opt:
+      - paths=source_relative
+  - plugin: connect-go
+    out: gen
+    opt:
+      - paths=source_relative
+  - plugin: validate
+    out: gen
+    opt:
+      - lang=go
+      - paths=source_relative

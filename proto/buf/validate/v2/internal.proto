@@ -14,9 +14,7 @@ message InternalRules {
 }
 
 message InternalFloatsRules {
-  oneof type {
-    InternalFloatsConstRules const = 1;
-  }
+  optional InternalFloatsConstRules const = 1;
 }
 
 message InternalFloatsConstRules {
